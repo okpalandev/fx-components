@@ -22,12 +22,13 @@ class FxCard extends HTMLElement {
 
     render() {
         const self = this;
-        if ((self as HTMLElement)?.shadowRoot) {
-            (self as HTMLElement)?.shadowRoot.innerHTML = `
+        const shadowRoot = (self as HTMLElement).shadowRoot;
+        if (shadowRoot) {
+            shadowRoot.innerHTML = `
                 <style>${FxCard.styles}</style>
                 <div>
-                    <slot name="title" id="title"></slot>
-                    <slot name="description" id="description"></slot>
+                    <slot name="fx-title" id="fx-title"></slot>
+                    <slot name="fx-description" id="fx-description"></slot>
                     <slot name="actions"></slot>
                 </div>
             `;
@@ -35,17 +36,20 @@ class FxCard extends HTMLElement {
     }
 
     attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-        const observer = new MutationObserver(() => {});
-        observer.observe((this as HTMLElement).shadowRoot, { attributes: true });
+        const shadowRoot = (this as HTMLElement).shadowRoot;
+        if (shadowRoot) {
+            const observer = new MutationObserver(() => {});
+            observer.observe(shadowRoot, { attributes: true });
 
-        if (oldValue !== newValue) {
-            switch (name) {
-                case 'title':
-                    (this as HTMLElement).shadowRoot.getElementById('title')!.textContent = newValue;
-                    break;
-                case 'description':
-                    (this as HTMLElement).shadowRoot.getElementById('description')!.textContent = newValue;
-                    break;
+            if (oldValue !== newValue) {
+                switch (name) {
+                    case 'fx-title':
+                        shadowRoot.getElementById('fx-title')!.textContent = newValue;
+                        break;
+                    case 'fx-description':
+                        shadowRoot.getElementById('fx-description')!.textContent = newValue;
+                        break;
+                }
             }
         }
     }
@@ -58,20 +62,20 @@ class FxCard extends HTMLElement {
         if (!(this as HTMLElement).hasAttribute('role')) {
             (this as HTMLElement).setAttribute('role', 'card');
         }
-        if (!(this as HTMLElement).hasAttribute('title')) {
-            (this as HTMLElement).setAttribute('title', 'Title');
+        if (!(this as HTMLElement).hasAttribute('fx-title')) {
+            (this as HTMLElement).setAttribute('fx-title', 'fx-title');
         }
-        if (!(this as HTMLElement).hasAttribute('description')) {
-            (this as HTMLElement).setAttribute('description', 'Description');
+        if (!(this as HTMLElement).hasAttribute('fx-description')) {
+            (this as HTMLElement).setAttribute('fx-description', 'fx-description');
         }
 
-        const titleElement = (this as HTMLElement)?.shadowRoot?.getElementById('title');
-        const descriptionElement = (this as HTMLElement)?.shadowRoot?.getElementById('description');
+        const titleElement = (this as HTMLElement)?.shadowRoot?.getElementById('fx-title');
+        const descriptionElement = (this as HTMLElement)?.shadowRoot?.getElementById('fx-description');
         if (titleElement) {
-            titleElement.textContent = (this as HTMLElement).getAttribute('title');
+            titleElement.textContent = (this as HTMLElement).getAttribute('fx-title');
         }
         if (descriptionElement) {
-            descriptionElement.textContent = (this as HTMLElement).getAttribute('description');
+            descriptionElement.textContent = (this as HTMLElement).getAttribute('fx-description');
         }
     }
 }
