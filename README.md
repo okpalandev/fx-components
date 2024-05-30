@@ -6,7 +6,6 @@ HTML5 Web Components for Special Effects.
 - [fx-card]()
 - [fx-modal]()
 - [fx-parallax]()
-- [fx-scrollspy]()
 - [fx-tooltip]()
 
 ## Usage
