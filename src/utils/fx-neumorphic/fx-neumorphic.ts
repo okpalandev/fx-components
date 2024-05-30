@@ -1,20 +1,19 @@
-import { Fx } from '../helpers';
 import './fx-neumorphic.scss';
-
+import  Fx  from '../helpers';
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-neumorphic': Fx.FxNeumorphic;
+        'fx-neumorphic': FxNeumorphic.FxNeumorphic;
     }
-}
-namespace Fx {
+};
 
+namespace FxNeumorphic {
     export  interface FxNeumorphic extends HTMLElement {
         connectedCallback(): void;
         disconnectedCallback(): void;
         attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
     }
 
-    export class FxNeumorphic extends HTMLElement {
+    export class FxNeumorphic extends HTMLElement implements FxNeumorphic {
         static get observedAttributes() {
             return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
         }
@@ -79,4 +78,4 @@ namespace Fx {
     customElements.define('fx-neumorphic', Neuromorphic);
 }
 
-export default Fx;
+export default FxNeumorphic;

@@ -1,4 +1,5 @@
 {
+    "extensions": ["ts", "tsx","js","jsx"],
     "compilerOptions": {
         "target": "es6",
         "module": "es6",
@@ -6,11 +7,14 @@
         "declaration": true,
         "sourceMap": true,
         "outDir": "./dist",
+        
         "rootDir": "./src",
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules", "dist"]

@@ -7,14 +7,17 @@ import postcss from 'rollup-plugin-postcss';
 export default {
     input: 'src/index.ts',
     output: {
-        file: 'dist/bundle.js',
+        file: 'dist/fx-components.js',
         format: 'es',
         sourcemap: true
     },
     plugins: [
         resolve(),
         commonjs(),
-        typescript(),
+        typescript({
+          tsconfig: 'tsconfig.json',
+            
+        }),
         postcss({
             extensions: ['.css', '.scss'],
             minimize: true,
