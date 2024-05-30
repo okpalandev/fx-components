@@ -29,7 +29,7 @@ class FxCard extends HTMLElement {
                 <div>
                     <slot name="fx-title" id="fx-title"></slot>
                     <slot name="fx-description" id="fx-description"></slot>
-                    <slot name="actions"></slot>
+                    <slot name="fx-actions"></slot>
                 </div>
             `;
         }
