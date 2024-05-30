@@ -1,4 +1,4 @@
-import { Fx } from '../utils/index';
+import { Fx } from '../effects/index';
 import { styles } from './fx-modal.css' assert { type: 'css' };
 
 class FxModal extends Fx._compose(HTMLElement) {
