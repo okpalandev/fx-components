@@ -4,12 +4,10 @@ interface FxObserver {
     unobserve(target: Node): void;
     observeAttributes(): void;
 }
-
 class FxObserver extends HTMLElement  {
-    observers: MutationObserver[] = [];
+    observers: Map<Node, MutationObserver> = new Map();
     constructor() {
         super();
-        this.observers = [];
         this.observeAttributes = this.observeAttributes.bind(this);
 
     }
@@ -18,31 +16,29 @@ class FxObserver extends HTMLElement  {
         this.observeAttributes();
     }
 
-    
     observe(target: Node, options: MutationObserverInit, callback: MutationCallback) {
         const observer = new MutationObserver(callback);
         observer.observe(target, options);
-        this.observers.push(observer);
+        this.observers.set(target, observer);
     }
 
+    unobserve(target: Node) {
+        const observer = this.observers.get(target);
+        if (observer) {
+            observer.disconnect();
+            this.observers.delete(target);
+        }
+    }
+   
     disconnect() {
         this.observers.forEach((observer) => observer.disconnect());
     }
 
     getRecords() {
-        return this.observers.flatMap((observer: MutationObserver) => observer.takeRecords());
+        return Array.from(this.observers.values()).flatMap((observer: MutationObserver) => observer.takeRecords());
     }
 
-    unobserve(target: Node) {
-        this.observers = this.observers.filter((observer) => {
-            
-            if (observer.target === target) {
-                observer.disconnect();
-                return false;
-            }
-            return true;
-        });
-    }
+    
 
     observeAttributes() {
         const observer = new MutationObserver((mutationsList) => {
