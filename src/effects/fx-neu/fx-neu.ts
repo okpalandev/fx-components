@@ -79,4 +79,4 @@ namespace FxNeu {
     customElements.define('fx-neumorphic', Neuromorphic);
 }
 
-export default FxNeu;
+export { FxNeu };
