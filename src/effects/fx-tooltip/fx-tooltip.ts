@@ -4,11 +4,10 @@ export { };
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-tooltip': FxTooltip.FxTooltip;
+        'fx-tooltip': FxTooltip;
     }
 }
 
-namespace FxTooltip {
     export interface FxTooltip {
         constructor(): void;
         prototype: {
@@ -68,9 +67,8 @@ namespace FxTooltip {
     }
 
     export const FxTooltipElement = Fx._compose(HTMLElement, FxTooltipMixin);
-    customElements.define('fx-parallax', FxTooltipElement);
-    customElements.define('fx-tooltip', FxTooltip);
+        customElements.define('fx-tooltip', FxTooltip);
     
-}
+
 
 export default FxTooltip;
