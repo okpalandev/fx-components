@@ -7,7 +7,7 @@
         "declaration": true,
         "sourceMap": true,
         "outDir": "./dist",
-        "typeRoots": ["./dist/@types"],
+        "typeRoots": ["./dist/@types", "./node_modules/@types"],
         "rootDir": "./src",
         "strict": true,
         "moduleResolution": "node",
