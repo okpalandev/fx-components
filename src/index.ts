@@ -1,2 +1,3 @@
-export * from './fx-card/fx-card.js';
-export * from "./fx-modal/fx-modal.js";
+export * from './fx-parallax/fx-parallax';
+export * from './fx-card/fx-card';
+export * from "./fx-modal/fx-modal";
