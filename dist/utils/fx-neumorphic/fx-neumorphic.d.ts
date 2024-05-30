@@ -1,4 +1,3 @@
-import './fx-neumorphic.scss';
 declare global {
     interface HTMLElementTagNameMap {
         'fx-neumorphic': FxNeumorphic.FxNeumorphic;

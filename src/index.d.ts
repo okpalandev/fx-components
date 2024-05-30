@@ -12,3 +12,14 @@ declare module '*.ts' {
     const ts: string;
     export { ts };
 }
+
+
+declare module '*.js' {
+    const js: string;
+    export { js };
+}
+
+declare module '*.scss'{
+    const styles: string;
+    export { styles };
+}
