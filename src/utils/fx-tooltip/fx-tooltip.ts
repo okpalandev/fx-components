@@ -8,7 +8,6 @@ declare global {
     }
 }
 
-
 namespace FxTooltip {
     export interface FxTooltip {
         constructor(): void;
