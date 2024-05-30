@@ -4,6 +4,7 @@ interface FxObserver {
     unobserve(target: Node): void;
     observeAttributes(): void;
 }
+
 class FxObserver extends HTMLElement  {
     observers: Map<Node, MutationObserver> = new Map();
     constructor() {
