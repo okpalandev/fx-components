@@ -7,7 +7,7 @@ declare global {
 };
 
 namespace FxNeumorphic {
-    export  interface FxNeumorphic extends HTMLElement {
+    export interface FxNeumorphic extends HTMLElement {
         connectedCallback(): void;
         disconnectedCallback(): void;
         attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
@@ -17,6 +17,7 @@ namespace FxNeumorphic {
         static get observedAttributes() {
             return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
         }
+
         static get styles() {
             return `
             :host {

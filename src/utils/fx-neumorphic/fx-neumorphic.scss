@@ -32,3 +32,10 @@ $neu-blur: 10px;
         $shadow-dark + $neu-shadow-x + $neu-shadow-y + $neu-blur $light;
     border-radius: $neu-radius;
 }
+
+
+.fx-neumorphic {
+    @include neu($neu-light);
+    background-color: $neu-light;
+    color: $neu-dark;
+}
