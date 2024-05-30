@@ -6,17 +6,24 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
     input: 'src/index.ts',
-    output: {
-        file: 'dist/fx-components.js',
-        format: 'es',
-        sourcemap: true
-    },
+    output: [
+        {
+            file: 'dist/fx-components.js',
+            format: 'es',
+            sourcemap: true
+        },
+        {
+            file: 'dist/fx-components.umd.js',
+            format: 'umd',
+            name: 'fxComponents',
+            sourcemap: true
+        }
+    ],
     plugins: [
         resolve(),
         commonjs(),
         typescript({
-          tsconfig: 'tsconfig.json',
-            
+            tsconfig: 'tsconfig.json',
         }),
         postcss({
             extensions: ['.css', '.scss'],
