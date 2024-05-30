@@ -1,4 +1,4 @@
-import './fx-neumorphic.scss';
+import styles from './styles.scss' assert { type: 'scss' };
 import  Fx  from '../fx-components';
 declare global {
     interface HTMLElementTagNameMap {

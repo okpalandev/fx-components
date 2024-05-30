@@ -1,0 +1,30 @@
+:host {
+            display: block;
+            background-color: purple;
+            border-radius: 10px;
+            overflow: hidden;
+            will-change: transform;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+            padding: 16px;
+        }
+        :host([disabled]) {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        #title, #description {
+            display: block;
+        }
+        #title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        #description {
+            font-size: 1rem;
+            color: #666;
+        }
+        ::slotted([slot="actions"]) {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
