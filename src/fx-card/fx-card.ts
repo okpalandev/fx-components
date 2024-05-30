@@ -1,4 +1,4 @@
-import { Fx,FxObserver } from '../utils/index';
+import { Fx,FxObserver } from '../effects/index';
 import styles from './fx-card.css';
 
 class FxCard extends HTMLElement {
