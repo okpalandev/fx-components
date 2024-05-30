@@ -2,16 +2,23 @@ import { Fx } from '../helpers';
 
 export { };
 
-interface FxTooltip {
-    constructor(): void;
-    prototype: {
-        handleMouseEnter: () => void;
-        handleMouseLeave: () => void;
-    } | undefined;
+declare global {
+    interface HTMLElementTagNameMap {
+        'fx-tooltip': FxTooltip.FxTooltip;
+    }
 }
-namespace FxParallax {
 
-   declare class FxTooltip extends HTMLElement {
+
+namespace FxTooltip {
+    export interface FxTooltip {
+        constructor(): void;
+        prototype: {
+            handleMouseEnter: () => void;
+            handleMouseLeave: () => void;
+        } | undefined;
+    };
+
+   export declare class FxTooltip extends HTMLElement implements FxTooltip {
         constructor();
         handleScroll(): void;
         handleMouseEnter(): void;
@@ -60,9 +67,11 @@ namespace FxParallax {
             }
         }
     }
+
     export const FxTooltipElement = Fx._compose(HTMLElement, FxTooltipMixin);
     customElements.define('fx-parallax', FxTooltipElement);
     customElements.define('fx-tooltip', FxTooltip);
-
+    
 }
-export default FxTooltip.FxTooltip;
+
+export default FxTooltip;

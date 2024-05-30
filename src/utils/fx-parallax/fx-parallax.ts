@@ -16,7 +16,7 @@ namespace FxParallax {
         } | undefined;
     }
 
-    export declare class FxParallax  extends HTMLElement {
+    export declare class FxParallax  extends HTMLElement implements FxParallax {
         constructor();
         handleScroll(): void;
         isScrolling: boolean;
@@ -79,9 +79,9 @@ namespace FxParallax {
         }
 
     }
-    
+
     export const FxParallaxElement = Fx._compose(HTMLElement, FxParallaxMixin);
     customElements.define('fx-parallax', FxParallaxElement);
 }
 
-export default FxParallax.FxParallax;
+export default FxParallax;
