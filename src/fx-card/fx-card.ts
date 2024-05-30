@@ -1,15 +1,15 @@
 import { Fx,FxObserver } from '../effects/index';
 import styles from './fx-card.css';
 
-class FxCard extends HTMLElement {
+class FxCard extends Fx._compose(HTMLElement,FxObserver) {
     static styles = `
         ${styles}
     `;
 
     constructor() {
         super();
-        (this as HTMLElement).attachShadow({ mode: 'open' });
-        (this as HTMLElement).setAttribute('role', 'card');
+        (this as unknown as HTMLElement).attachShadow({ mode: 'open' });
+        (this as unknown as HTMLElement).setAttribute('role', 'card');
         this.setInitialContent();
     }
 
@@ -21,7 +21,7 @@ class FxCard extends HTMLElement {
 
     render() {
         const self = this;
-        const shadowRoot = (self as HTMLElement).shadowRoot;
+        const shadowRoot = (self as unknown as HTMLElement).shadowRoot;
         if (shadowRoot) {
             shadowRoot.innerHTML = `
                 <style>${FxCard.styles}</style>
@@ -35,7 +35,7 @@ class FxCard extends HTMLElement {
     }
 
     attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-        const shadowRoot = (this as HTMLElement).shadowRoot;
+        const shadowRoot = (this as unknown as HTMLElement).shadowRoot;
         if (shadowRoot) {
             const observer = new MutationObserver(() => {});
             observer.observe(shadowRoot, { attributes: true });
@@ -58,26 +58,26 @@ class FxCard extends HTMLElement {
     }
 
     setInitialContent() {
-        if (!(this as HTMLElement).hasAttribute('role')) {
-            (this as HTMLElement).setAttribute('role', 'card');
+        if (!(this as unknown as HTMLElement).hasAttribute('role')) {
+            (this as unknown as HTMLElement).setAttribute('role', 'card');
         }
-        if (!(this as HTMLElement).hasAttribute('fx-title')) {
-            (this as HTMLElement).setAttribute('fx-title', 'fx-title');
+        if (!(this as unknown as HTMLElement).hasAttribute('fx-title')) {
+            (this as unknown as HTMLElement).setAttribute('fx-title', 'fx-title');
         }
-        if (!(this as HTMLElement).hasAttribute('fx-description')) {
-            (this as HTMLElement).setAttribute('fx-description', 'fx-description');
+        if (!(this as unknown as HTMLElement).hasAttribute('fx-description')) {
+            (this as unknown as HTMLElement).setAttribute('fx-description', 'fx-description');
         }
 
-        const titleElement = (this as HTMLElement)?.shadowRoot?.getElementById('fx-title');
-        const descriptionElement = (this as HTMLElement)?.shadowRoot?.getElementById('fx-description');
+        const titleElement = (this as unknown as HTMLElement)?.shadowRoot?.getElementById('fx-title');
+        const descriptionElement = (this as unknown as HTMLElement)?.shadowRoot?.getElementById('fx-description');
         if (titleElement) {
-            titleElement.textContent = (this as HTMLElement).getAttribute('fx-title');
+            titleElement.textContent = (this as unknown as HTMLElement).getAttribute('fx-title');
         }
         if (descriptionElement) {
-            descriptionElement.textContent = (this as HTMLElement).getAttribute('fx-description');
+            descriptionElement.textContent = (this as unknown as HTMLElement).getAttribute('fx-description');
         }
     }
 }
 
-customElements.define('fx-card', FxCard as CustomElementConstructor);
+customElements.define('fx-card', FxCard as unknown as CustomElementConstructor);
 export { FxCard };
