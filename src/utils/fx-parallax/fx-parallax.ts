@@ -3,11 +3,11 @@ export { };
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-parallax': FxParallax.FxParallax;
+        'fx-parallax': Fx.FxParallax;
     }
 }
 
-namespace FxParallax {
+namespace Fx {
     export interface FxParallax {
         constructor(): void;
         prototype: {
@@ -84,4 +84,4 @@ namespace FxParallax {
     customElements.define('fx-parallax', FxParallaxElement);
 }
 
-export default FxParallax;
+export default Fx;
