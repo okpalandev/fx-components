@@ -33,8 +33,9 @@ class FxObserver extends HTMLElement  {
         return this.observers.flatMap((observer: MutationObserver) => observer.takeRecords());
     }
 
-    unobserve(target: MutationObserver) {
+    unobserve(target: Node) {
         this.observers = this.observers.filter((observer) => {
+            
             if (observer.target === target) {
                 observer.disconnect();
                 return false;
