@@ -1,9 +1,10 @@
-interface FxObserver {
+declare interface FxObserver {
     observe(target: Node, options: MutationObserverInit, callback: MutationCallback): void;
     disconnect(): void;
     unobserve(target: Node): void;
     observeAttributes(): void;
 }
+
 
 class FxObserver extends HTMLElement  {
     observers: Map<Node, MutationObserver> = new Map();
@@ -59,5 +60,6 @@ class FxObserver extends HTMLElement  {
     }
 
 }
+
 
 export { FxObserver };
