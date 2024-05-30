@@ -47,8 +47,7 @@ class FxObserver extends HTMLElement  {
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
                 if (mutation.type === 'attributes') {
-                    const { attributeName } = mutation;
-                    // const newValue = (mutation.target as Element).getAttribute(attributeName);
+                    this.attributeChangedCallback(mutation.attributeName!, mutation.oldValue, mutation.target.nodeValue);            
                 }
             });
         });
@@ -56,6 +55,11 @@ class FxObserver extends HTMLElement  {
             observer.observe(this.shadowRoot, { attributes: true });
         }
     }
+
+    attributeChangedCallback(name: string, oldValue: any, newValue: any) {
+        console.log('attributeChangedCallback', name, oldValue, newValue);
+    }
+
 }
 
 export { FxObserver };

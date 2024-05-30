@@ -13,12 +13,6 @@ declare module '*.ts' {
     export { ts };
 }
 
-
-declare module '*.js' {
-    const js: string;
-    export { js };
-}
-
 declare module '*.scss'{
     const styles: string;
     export { styles };
