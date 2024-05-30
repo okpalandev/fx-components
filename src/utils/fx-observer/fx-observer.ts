@@ -7,12 +7,18 @@ interface FxObserver {
 
 class FxObserver extends HTMLElement  {
     observers: MutationObserver[] = [];
-
     constructor() {
         super();
         this.observers = [];
+        this.observeAttributes = this.observeAttributes.bind(this);
+
     }
 
+    connectedCallback() {
+        this.observeAttributes();
+    }
+
+    
     observe(target: Node, options: MutationObserverInit, callback: MutationCallback) {
         const observer = new MutationObserver(callback);
         observer.observe(target, options);
@@ -27,7 +33,7 @@ class FxObserver extends HTMLElement  {
         return this.observers.flatMap((observer: MutationObserver) => observer.takeRecords());
     }
 
-    unobserve(target: Node) {
+    unobserve(target: MutationObserver) {
         this.observers = this.observers.filter((observer) => {
             if (observer.target === target) {
                 observer.disconnect();
@@ -42,8 +48,7 @@ class FxObserver extends HTMLElement  {
             mutationsList.forEach((mutation) => {
                 if (mutation.type === 'attributes') {
                     const { attributeName } = mutation;
-                    const newValue = mutation.target.getAttribute(attributeName);
-                    // Do something with attributeName and newValue
+                    // const newValue = (mutation.target as Element).getAttribute(attributeName);
                 }
             });
         });
