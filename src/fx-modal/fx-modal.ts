@@ -1,4 +1,4 @@
-import { Fx } from '../scripts/fx.js';
+import { Fx } from '../fx.js';
 import styles from './fx-modal.scss';
 class FxModal extends Fx._compose(HTMLElement) {
     shadow: any;
