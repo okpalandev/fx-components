@@ -2,18 +2,18 @@ import styles from './styles.scss' assert { type: 'scss' };
 import  Fx  from '../fx-components';
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-neumorphic': FxNeumorphic.FxNeumorphic;
+        'fx-neumorphic': FxNeu.FxNeu;
     }
 };
 
-namespace FxNeumorphic {
-    export interface FxNeumorphic extends HTMLElement {
+namespace FxNeu {
+    export interface FxNeu extends HTMLElement {
         connectedCallback(): void;
         disconnectedCallback(): void;
         attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
     }
 
-    export class FxNeumorphic extends HTMLElement implements FxNeumorphic {
+    export class FxNeu extends HTMLElement implements FxNeu {
         static get observedAttributes() {
             return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
         }
@@ -69,14 +69,14 @@ namespace FxNeumorphic {
         }
     }
 
-    customElements.define('fx-neumorphic', FxNeumorphic);
+    customElements.define('fx-neumorphic', FxNeu);
 
-    export const FxNeuromorphicMixin = (Base: typeof FxNeumorphic) => class extends Base {
+    export const FxNeuromorphicMixin = (Base: typeof FxNeu) => class extends Base {
         static styles = Base.styles;
     };
 
-    export const Neuromorphic = FxNeuromorphicMixin(FxNeumorphic);
+    export const Neuromorphic = FxNeuromorphicMixin(FxNeu);
     customElements.define('fx-neumorphic', Neuromorphic);
 }
 
-export default FxNeumorphic;
+export default FxNeu;
