@@ -2,7 +2,7 @@
     "extensions": ["ts", "tsx","js","jsx"],
     "compilerOptions": {
         "target": "es6",
-        "module": "es6",
+        "module": "esnext",
         "lib": ["es6", "dom"],
         "declaration": true,
         "sourceMap": true,

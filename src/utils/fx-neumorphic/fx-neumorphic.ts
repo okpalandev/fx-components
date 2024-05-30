@@ -1,5 +1,5 @@
 import './fx-neumorphic.scss';
-import  Fx  from '../helpers';
+import  Fx  from '../fx-components';
 declare global {
     interface HTMLElementTagNameMap {
         'fx-neumorphic': FxNeumorphic.FxNeumorphic;

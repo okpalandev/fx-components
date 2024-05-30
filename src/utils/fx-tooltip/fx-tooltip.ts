@@ -1,4 +1,4 @@
-import { Fx } from '../helpers';
+import { Fx } from '../fx-components';
 
 export { };
 

@@ -1,5 +1,6 @@
-import { Fx } from '../fx.js';
-import styles from './fx-modal.scss';
+import { Fx } from '../utils/index';
+import { styles } from './fx-modal.css' assert { type: 'css' };
+
 class FxModal extends Fx._compose(HTMLElement) {
     shadow: any;
     closeButton: any;
@@ -35,4 +36,7 @@ class FxModal extends Fx._compose(HTMLElement) {
     }
 }
 
-customElements.define('fx-modal', FxModal);
+
+
+const FxModalElement = Fx._compose(HTMLElement,FxModal);
+customElements.define('fx-modal', FxModalElement);
