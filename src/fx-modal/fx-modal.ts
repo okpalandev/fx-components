@@ -37,6 +37,6 @@ class FxModal extends Fx._compose(HTMLElement) {
 }
 
 
-
+export { FxModal };
 const FxModalElement = Fx._compose(HTMLElement,FxModal);
 customElements.define('fx-modal', FxModalElement);
