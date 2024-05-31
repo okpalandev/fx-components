@@ -11,7 +11,8 @@
     "build": "rollup -c",
     "purge": "rimraf dist node_modules",
     "dev": "rollup -c -w",
-    "start": "vite"
+    "prebuild": "npm run purge",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
