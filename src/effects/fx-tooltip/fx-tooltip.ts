@@ -67,8 +67,4 @@ export function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T) {
 }
 
 export const FxTooltipElement = Fx._compose(HTMLElement, FxTooltipMixin);
-customElements.define('fx-tooltip', FxTooltip);
-
-
-
-export default FxTooltip;
+customElements.define('fx-tooltip', FxTooltipElement);
