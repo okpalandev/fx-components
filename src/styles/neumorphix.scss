@@ -25,7 +25,7 @@ $neu-blur: 10px;
     @if $contrast-ratio < 4.5 {
         $light: #ffffff; // Fallback to white if contrast is too low
     }
-
+    
     // Apply shadows
     box-shadow:
         $shadow-light + $neu-shadow-x + $neu-shadow-y + $neu-blur $dark,
