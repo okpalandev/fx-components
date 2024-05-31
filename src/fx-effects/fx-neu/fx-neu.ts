@@ -3,7 +3,7 @@ import Fx from '../../utils/fx';
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-neu': FxNeu;
+        'fx-neu': typeof FxNeuElement;
     }
 };
 
@@ -58,6 +58,6 @@ export const FxNeuromorphicMixin = (Base:FxNeu) => class FxNeu extends HTMLEleme
 }
 
 export const FxNeuElement = Fx._compose( HTMLElement as any,FxNeuromorphicMixin) as any
-export default FxNeuElement;
+export { FxNeuElement as FxNeu };
 
 
