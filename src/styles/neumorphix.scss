@@ -35,6 +35,8 @@ $dark: $neu-dark;
     @return if($l1 > $l2, $l1 / $l2, $l2 / $l1);
 }
 
+
+
 @function index($list, $value) {
     @return index($list, $value);
 }
@@ -62,36 +64,5 @@ $dark: $neu-dark;
         $shadow-light + $neu-shadow-x + $neu-shadow-y + $neu-blur $dark,
         $shadow-dark + $neu-shadow-x + $neu-shadow-y + $neu-blur $light;
     border-radius: $neu-radius;
-}
-
-:host(.fx-neu) {
-    --fx-neu-shadow-light: #fff;
-    --fx-neu-shadow-dark: #000;
-    --fx-neu-shadow-x: 10px;
-    --fx-neu-shadow-y: 10px;
-    --fx-neu-blur: 30px;
-    --fx-neu-radius: 15px;
-    display: inline-block;
-    border-radius: var(--fx-neu-radius);
-    overflow: hidden;
-    will-change: box-shadow;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease;
-    @include neu(top left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
-}
-
-:host(.fx-neu-top) {
-    @include neu(top left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
-}
-
-:host(.fx-neu-right) {
-    @include neu(top right, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
-}
-
-:host(.fx-neu-bottom) {
-    @include neu(bottom right, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
-}
-
-:host(.fx-neu-left) {
-    @include neu(bottom left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
 }
 
