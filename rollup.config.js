@@ -1,6 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import  terser  from '@rollup/plugin-terser';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 
@@ -28,7 +28,12 @@ export default {
         postcss({
             extensions: ['.css', '.scss'],
             minimize: true,
-            extract: true
+            extract: 'dist/fx-components.css', 
+            use: [
+                ['sass', {
+                    includePaths: ['./src/styles'] 
+                }]
+            ]
         }),
         terser()
     ]
