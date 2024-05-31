@@ -4,7 +4,7 @@ export { };
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-tooltip': FxTooltip;
+        'fx-tooltip': typeof FxTooltip;
     }
 }
 
