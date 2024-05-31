@@ -1,5 +1,5 @@
 import styles from './styles.scss' assert { type: 'scss' };
-import Fx from '../fx-components';
+import Fx from '../../utils/fx';
 
 declare global {
     interface HTMLElementTagNameMap {

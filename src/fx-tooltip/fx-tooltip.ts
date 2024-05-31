@@ -1,4 +1,4 @@
-import { Fx } from '../fx-components';
+import { Fx } from '../utils/fx';
 
 export { };
 
