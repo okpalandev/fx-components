@@ -1,7 +1,7 @@
 import { Fx } from '../fx-effects/fx-effects';
 import  styles  from './fx-modal.css' assert { type: 'css' };
 
-class FxModal extends Fx._compose(HTMLElement) {
+class FxModal extends HTMLElement {
     shadow: any;
     closeButton: any;
     modal: any;
@@ -23,9 +23,6 @@ class FxModal extends Fx._compose(HTMLElement) {
         this.modal = this.shadow.querySelector('.fx-modal');
         this.closeButton.addEventListener('click', this.close.bind(this));
     }
-    attachShadow(arg0: { mode: string; }) {
-        throw new Error('Method not implemented.');
-    }
     
     open() {
         this.modal.style.display = "block";
@@ -37,6 +34,6 @@ class FxModal extends Fx._compose(HTMLElement) {
 }
 
 
-export { FxModal };
 const FxModalElement = Fx._compose(HTMLElement,FxModal);
 customElements.define('fx-modal', FxModalElement);
+export { FxModal , FxModalElement as default};
