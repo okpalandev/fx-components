@@ -19,19 +19,7 @@ export class FxNeu extends HTMLElement implements FxNeu {
 
     static get styles() {
         return `
-            :host {
-                --fx-neu-shadow-light: #fff;
-                --fx-neu-shadow-dark: #000;
-                --fx-neu-shadow-x: 10px;
-                --fx-neu-shadow-y: 10px;
-                --fx-neu-blur: 30px;
-                --fx-neu-radius: 15px;
-                display: inline-block;
-                border-radius: var(--fx-neu-radius);
-                overflow: hidden;
-                will-change: box-shadow;
-                transition: box-shadow 0.3s ease, border-radius 0.3s ease;
-            }
+          ${styles}
         `;
     };
 

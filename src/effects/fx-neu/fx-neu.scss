@@ -34,8 +34,37 @@ $neu-blur: 10px;
 }
 
 
-.fx-neumorphic {
-    @include neu($neu-light);
-    background-color: $neu-light;
-    color: $neu-dark;
+:host {
+    --fx-neu-shadow-light: #fff;
+    --fx-neu-shadow-dark: #000;
+    --fx-neu-shadow-x: 10px;
+    --fx-neu-shadow-y: 10px;
+    --fx-neu-blur: 30px;
+    --fx-neu-radius: 15px;
+    display: inline-block;
+    border-radius: var(--fx-neu-radius);
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease;
 }
+
+:host(.fx-neu) {
+    @include neu(top left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
+}
+
+:host(.fx-neu-top) {
+    @include neu(top left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
+}
+
+:host(.fx-neu-right) {
+    @include neu(top right, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
+}
+
+:host(.fx-neu-bottom) {
+    @include neu(bottom right, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
+}
+
+:host(.fx-neu-left) {
+    @include neu(bottom left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
+}
+
