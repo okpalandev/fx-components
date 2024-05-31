@@ -1,6 +1,7 @@
 declare module '*.css' {
     const styles: string;
     export { styles };
+    export default styles;
 }
 
 declare module '*.html' {
