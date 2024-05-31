@@ -1,21 +1,25 @@
 import { Fx } from '../utils/fx';
 import styles from './fx-modal.css';
 export { };
+
 declare global {
     interface HTMLElementTagNameMap {
         'fx-modal': typeof FxModalElement;
     }
 }
+
 export interface FxModal extends HTMLElement {
     open(): void;
     close(): void;
 }
+
 export declare class FxModal extends HTMLElement {
     shadow: any;
     closeButton: any;
     modal: any;
     constructor();
 }
+
 export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T) {
     return class extends Base {
         shadow: any;
