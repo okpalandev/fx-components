@@ -1,5 +1,5 @@
 /// <reference path="./index.d.ts" />
-// 
+
 export * from './effects/index';
 
 // components
