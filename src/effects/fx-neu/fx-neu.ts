@@ -6,13 +6,14 @@ declare global {
         'fx-neu': FxNeu;
     }
 };
+
 export interface FxNeu extends HTMLElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
     attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
 }
 
-export class FxNeu extends HTMLElement implements FxNeu {
+export const FxNeuromorphicMixin = (Base:FxNeu) => class FxNeu extends HTMLElement implements FxNeu {
     static get observedAttributes() {
         return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
     }
@@ -56,13 +57,7 @@ export class FxNeu extends HTMLElement implements FxNeu {
     }
 }
 
-customElements.define('fx-neumorphic', FxNeu);
-
-export const FxNeuromorphicMixin = (Base: typeof FxNeu) => class extends Base {
-    static styles = Base.styles;
-};
-
-export const Neuromorphic = FxNeuromorphicMixin(FxNeu);
-customElements.define('fx-neu', Neuromorphic);
+export const FxNeuElement = Fx._compose(FxNeuromorphicMixin, HTMLElement);
+customElements.define('fx-neu', FxNeuElement as CustomElementConstructor);
 
 
