@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-    input: 'src/index.ts',
+    input: 'src/fx-components.ts',
     output: [
         {
             file: 'dist/fx-components.js',
