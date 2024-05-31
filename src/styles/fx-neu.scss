@@ -34,7 +34,9 @@ $neu-blur: 10px;
 }
 
 
-:host {
+
+
+:host(.fx-neu) {
     --fx-neu-shadow-light: #fff;
     --fx-neu-shadow-dark: #000;
     --fx-neu-shadow-x: 10px;
@@ -46,9 +48,6 @@ $neu-blur: 10px;
     overflow: hidden;
     will-change: box-shadow;
     transition: box-shadow 0.3s ease, border-radius 0.3s ease;
-}
-
-:host(.fx-neu) {
     @include neu(top left, var(--fx-neu-shadow-light), var(--fx-neu-shadow-dark));
 }
 
