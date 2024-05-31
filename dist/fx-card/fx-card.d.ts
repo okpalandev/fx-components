@@ -1,3 +1,4 @@
+/// <reference types="@/fx-components" />
 export {};
 declare const FxCard_base: any;
 declare class FxCard extends FxCard_base {

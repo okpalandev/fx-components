@@ -1,26 +1,31 @@
 export {};
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-modal': typeof FxModalElement;
+        'fx-parallax': FxParallax;
     }
 }
-export interface FxModal extends HTMLElement {
-    open(): void;
-    close(): void;
+export interface FxParallax {
+    constructor(): void;
+    prototype: {
+        handleScroll: () => void;
+        isScrolling: boolean;
+    } | undefined;
 }
-export declare class FxModal extends HTMLElement {
-    shadow: any;
-    closeButton: any;
-    modal: any;
+export declare class FxParallax extends HTMLElement implements FxParallax {
     constructor();
+    handleScroll(): void;
+    isScrolling: boolean;
 }
-export declare function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T): {
+export declare function FxParallaxMixin<T extends new (...args: any[]) => {}>(Base: T): {
     new (...args: any[]): {
-        shadow: any;
-        closeButton: any;
-        modal: any;
-        open(): void;
-        close(): void;
+        isScrolling: boolean;
+        connectedCallback(): void;
+        disconnectedCallback(): void;
+        attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
+        handleScroll(): void;
+        readonly speed: number;
+        readonly direction: string;
+        readonly offset: string | 0;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -346,6 +351,6 @@ export declare function FxModalMixin<T extends new (...args: any[]) => HTMLEleme
         blur(): void;
         focus(options?: FocusOptions | undefined): void;
     };
-} & T_4;
-declare const FxModalElement: any;
-export { FxModalElement as default };
+    readonly observedAttributes: string[];
+};
+export declare const FxParallaxElement: any;

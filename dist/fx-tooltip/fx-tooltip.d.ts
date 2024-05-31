@@ -1,26 +1,31 @@
 export {};
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-modal': typeof FxModalElement;
+        'fx-tooltip': typeof FxTooltip;
     }
 }
-export interface FxModal extends HTMLElement {
-    open(): void;
-    close(): void;
+export declare interface FxTooltip {
+    constructor(): void;
+    prototype: {
+        handleMouseEnter: () => void;
+        handleMouseLeave: () => void;
+    } | undefined;
 }
-export declare class FxModal extends HTMLElement {
-    shadow: any;
-    closeButton: any;
-    modal: any;
+export declare class FxTooltip extends HTMLElement {
     constructor();
+    handleScroll(): void;
+    handleMouseEnter(): void;
+    handleMouseLeave(): void;
+    tooltip: HTMLDivElement;
+    observedAttributes: string[];
 }
-export declare function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T): {
+export declare function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T): {
     new (...args: any[]): {
-        shadow: any;
-        closeButton: any;
-        modal: any;
-        open(): void;
-        close(): void;
+        tooltip: HTMLDivElement;
+        connectedCallback(): void;
+        disconnectedCallback(): void;
+        handleMouseEnter(): void;
+        handleMouseLeave(): void;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -346,6 +351,7 @@ export declare function FxModalMixin<T extends new (...args: any[]) => HTMLEleme
         blur(): void;
         focus(options?: FocusOptions | undefined): void;
     };
-} & T_4;
-declare const FxModalElement: any;
-export { FxModalElement as default };
+    readonly observedAttributes: string[];
+};
+declare const FxTooltipElement: any;
+export { FxTooltipElement };

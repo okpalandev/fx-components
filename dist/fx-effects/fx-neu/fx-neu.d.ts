@@ -1,26 +1,20 @@
-export {};
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-modal': typeof FxModalElement;
+        'fx-neu': typeof FxNeuElement;
     }
 }
-export interface FxModal extends HTMLElement {
-    open(): void;
-    close(): void;
+export interface FxNeu extends HTMLElement {
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
 }
-export declare class FxModal extends HTMLElement {
-    shadow: any;
-    closeButton: any;
-    modal: any;
-    constructor();
-}
-export declare function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T): {
-    new (...args: any[]): {
-        shadow: any;
-        closeButton: any;
-        modal: any;
-        open(): void;
-        close(): void;
+export declare const FxNeuromorphicMixin: (Base: FxNeu) => {
+    new (): {
+        connectedCallback(): void;
+        disconnectedCallback(): void;
+        handleMouseEnter(): void;
+        handleMouseLeave(): void;
+        attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -346,6 +340,8 @@ export declare function FxModalMixin<T extends new (...args: any[]) => HTMLEleme
         blur(): void;
         focus(options?: FocusOptions | undefined): void;
     };
-} & T_4;
-declare const FxModalElement: any;
-export { FxModalElement as default };
+    readonly observedAttributes: string[];
+    readonly styles: string;
+};
+export declare const FxNeuElement: any;
+export { FxNeuElement as FxNeu };
