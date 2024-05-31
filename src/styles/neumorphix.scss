@@ -1,3 +1,5 @@
+@use "@sass:color";
+
 $neu-light: #fcfcfc;
 $neu-dark: #3e3e3e;
 $neu-shadow-light: #ffffff;
@@ -7,6 +9,9 @@ $neu-radius: 10px;
 $neu-shadow-x: 5px;
 $neu-shadow-y: 5px;
 $neu-blur: 10px;
+$light-source: top left;
+$light: $neu-light;
+$dark: $neu-dark;
 
 @mixin neu($light-source: top left, $light: #ffffff, $dark: #000000) {
     $h1: if(index($light-source, left), $neu-shadow-light, $neu-shadow-dark);
