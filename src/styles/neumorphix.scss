@@ -14,7 +14,19 @@ $dark: $neu-dark;
 
 
 @function lightness($color) {
-    @return red($color) * 0.2126 + green($color) * 0.7152 + blue($color) * 0.0722;
+    $map : (
+        (red, 0.2126),
+        (green, 0.7152),
+        (blue, 0.0722)
+    );
+
+    $sum: 0;
+    @each $key, $value in $map {
+        $sum: $sum + nth($color, index($map, $key)) * $value;
+    }
+
+    @return $sum;
+    
 }
 
 @mixin neu($light-source: top left, $light: #ffffff, $dark: #000000) {
