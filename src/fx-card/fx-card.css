@@ -14,17 +14,17 @@
     opacity: 0.5;
 }
 
-#fx-card-title,
-#fx-description {
+:host(#fx-card-title,
+    #fx-description) {
     display: block;
 }
 
-#fx-card-title {
+:host(#fx-card-title) {
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-#fx-description {
+:host(#fx-description) {
     font-size: 1rem;
     color: #666;
 }
