@@ -2,8 +2,8 @@
   "name": "@koodu-platform/fx-components",
   "version": "0.0.0",
   "description": "Special Effects Components",
-  "main": "index.js",
-  "module": "dist/index.js",
+  "main": "dist/fx-components.js",
+  "module": "dist/fx-components.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
