@@ -354,4 +354,3 @@ export declare function FxTooltipMixin<T extends new (...args: any[]) => {}>(Bas
     readonly observedAttributes: string[];
 };
 export declare const FxTooltipElement: any;
-export default FxTooltip;
