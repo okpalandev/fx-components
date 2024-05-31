@@ -1,4 +1,4 @@
-import styles from './styles.scss' assert { type: 'scss' };
+import styles from './fx-neu.scss' assert { type: 'scss' };
 import Fx from '../../utils/fx';
 
 declare global {
