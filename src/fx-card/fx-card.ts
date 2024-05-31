@@ -1,6 +1,6 @@
 import { Fx,FxObserver } from '../effects/index';
 import styles from './fx-card.css';
-
+export {};
 class FxCard extends Fx._compose(HTMLElement,FxObserver) {
     static styles = `
         ${styles}
