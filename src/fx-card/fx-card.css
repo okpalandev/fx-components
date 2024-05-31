@@ -14,8 +14,7 @@
     opacity: 0.5;
 }
 
-:host(#fx-card-title,
-    #fx-description) {
+:host(#fx-card-title,#fx-description) {
     display: block;
 }
 

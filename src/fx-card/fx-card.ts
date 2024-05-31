@@ -53,10 +53,7 @@ class FxCard extends Fx._compose(HTMLElement,FxObserver) {
         }
     }
 
-    observeAttributes() {
-        // Implement the observeAttributes method here
-    }
-
+   
     setInitialContent() {
         if (!(this as unknown as HTMLElement).hasAttribute('role')) {
             (this as unknown as HTMLElement).setAttribute('role', 'card');
