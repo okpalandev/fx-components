@@ -6,7 +6,6 @@ declare class FxCard extends FxCard_base {
     connectedCallback(): void;
     render(): void;
     attributeChangedCallback(name: string, oldValue: any, newValue: any): void;
-    observeAttributes(): void;
     setInitialContent(): void;
 }
 export { FxCard };

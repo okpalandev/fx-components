@@ -354,4 +354,3 @@ export declare function FxParallaxMixin<T extends new (...args: any[]) => {}>(Ba
     readonly observedAttributes: string[];
 };
 export declare const FxParallaxElement: any;
-export default FxParallax;
