@@ -22,6 +22,7 @@ describe('FxCard', () => {
         expect(title.textContent).to.equal('Test Title');
         expect(description.textContent).to.equal('Test Description');
     });
+
     it('should reflect attribute changes in the shadow DOM', async () => {
         const element = await fixture<typeof FxCardElement>(html`<fx-card fx-title="Test Title" fx-description="Test Description"></fx-card>`); // Change the type of the element variable
 
@@ -38,7 +39,7 @@ describe('FxCard', () => {
             expect(title.textContent).to.equal('New Title');
             expect(description.textContent).to.equal('New Description');
         });
-
+        
     it('should render the slots', () => {
         const shadowRoot = element.shadowRoot as ShadowRoot;
         const slots = shadowRoot.querySelectorAll('slot');
@@ -49,4 +50,4 @@ describe('FxCard', () => {
         expect(slots[2].getAttribute('name')).to.be.null;
     });
 
-});
+})
