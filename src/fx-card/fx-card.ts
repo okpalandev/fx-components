@@ -16,7 +16,7 @@ class FxCard extends Fx._compose(HTMLElement,FxObserver) {
         (this as unknown as HTMLElement).setAttribute('role', 'card');
         this.setInitialContent();
     }
-
+    
     connectedCallback() {
         this.render();
         this.observeAttributes();
