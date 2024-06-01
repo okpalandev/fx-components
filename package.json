@@ -8,10 +8,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
+    "build": "npx rollup -c",
     "purge": "rimraf dist node_modules",
     "dev": "rollup -c -w",
-    "postinstall": "npm exec --package=@koodu-platform/fx-components -- 'rollup -c'"
+    "postinstall": "npm exec --package=@koodu-platform/fx-components -- 'npm run build'",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
