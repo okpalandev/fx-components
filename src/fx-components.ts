@@ -1,5 +1,5 @@
 // utitlies 
-export * from './utils/';
+export * from './utils/index';
 
 // effects
 export * from './fx-effects/fx-effects';
