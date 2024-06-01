@@ -1,4 +1,4 @@
-/// <reference types="@/fx-components" />
+/// <reference path="../../src/fx-components.d.ts" />
 export {};
 declare const FxCard_base: any;
 declare class FxCard extends FxCard_base {
