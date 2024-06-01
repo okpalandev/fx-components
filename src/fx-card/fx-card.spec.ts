@@ -39,7 +39,7 @@ describe('FxCard', () => {
             expect(title.textContent).to.equal('New Title');
             expect(description.textContent).to.equal('New Description');
         });
-        
+
     it('should render the slots', () => {
         const shadowRoot = element.shadowRoot as ShadowRoot;
         const slots = shadowRoot.querySelectorAll('slot');
@@ -49,5 +49,6 @@ describe('FxCard', () => {
         expect(slots[1].getAttribute('name')).to.equal('fx-description');
         expect(slots[2].getAttribute('name')).to.be.null;
     });
-
+    });
+    
 })
