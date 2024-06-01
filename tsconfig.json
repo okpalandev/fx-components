@@ -1,6 +1,4 @@
 {
-    "files": ["./src/fx-components.ts", "./src/fx-components.d.ts"],
-    "extensions": ["ts", "tsx","js","jsx"],
     "compilerOptions": {
         "target": "es6",
         "module": "esnext",
@@ -8,16 +6,15 @@
         "declaration": true,
         "sourceMap": true,
         "outDir": "./dist",
-        "typeRoots": ["./dist/@types", "./node_modules/@types"],
+        "typeRoots": ["./node_modules/@types"],
         "rootDir": "./src",
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "noImplicitAny": true,
-                
+        "noImplicitAny": true
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"]
 }
