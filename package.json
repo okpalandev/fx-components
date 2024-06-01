@@ -11,7 +11,6 @@
     "build": "rollup -c",
     "purge": "rimraf dist node_modules",
     "dev": "rollup -c -w",
-    "postinstall": "npm exec --package=@koodu-platform/fx-components -- 'npm run build'",
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
   },
