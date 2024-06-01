@@ -1,3 +1,4 @@
+/// <reference types="jest" />
 import { html, fixture, expect } from '@open-wc/testing';
 import './fx-card';
 
@@ -44,5 +45,5 @@ describe('FxCard', () => {
         expect(slots[1].getAttribute('name')).to.equal('fx-description');
         expect(slots[2].getAttribute('name')).to.be.null;
     });
-    
+
 });
