@@ -1,6 +1,7 @@
 /// <reference path="../fx-components.d.ts" />
+import { FxObserver } from '../fx-observer/fx-observer';
 import {Effects} from '../utils/effects';
-import { FxObserver } from '../fx-effects/fx-effects';
+
 import styles from './fx-card.css';
 
 export { };
