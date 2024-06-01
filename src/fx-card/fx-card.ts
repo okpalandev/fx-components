@@ -1,5 +1,4 @@
 /// <reference path="../fx-components.d.ts" />
-import { FxObserver } from '../fx-observer/fx-observer';
 import {Effects} from '../utils/effects';
 
 import styles from './fx-card.css';
@@ -80,6 +79,8 @@ class FxCard extends HTMLElement {
     }
 }
 
-export const FxCardElement = FxCard as unknown as HTMLElement;
-customElements.define('fx-card', FxCard as unknown as CustomElementConstructor);
+
+export const FxCardElement = Effects._compose(HTMLElement, FxCard as unknown as CustomElementConstructor);
+
+customElements.define('fx-card', FxCardElement as unknown as CustomElementConstructor);
 export { FxCard };
