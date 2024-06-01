@@ -28,7 +28,7 @@ export default {
         postcss({
             extensions: ['.css', '.scss'],
             minimize: true,
-            extract: 'dist/fx-components.css',
+            extract: 'fx-components.css',
             use: [
                 ['sass', {
                     includePaths: ['./src/styles']
