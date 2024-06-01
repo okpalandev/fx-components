@@ -1,4 +1,4 @@
-import { Fx } from '../utils/fx';
+import { Effects } from '../utils/effects';
 
 export { };
 
@@ -66,7 +66,7 @@ export function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T) {
     }
 }
 
- const FxTooltipElement =  Fx._compose(HTMLElement, FxTooltipMixin);
+ const FxTooltipElement =  Effects._compose(HTMLElement, FxTooltipMixin);
 
 customElements.define('fx-tooltip', FxTooltipElement);
 export { FxTooltipElement };

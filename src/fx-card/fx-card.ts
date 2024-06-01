@@ -1,11 +1,11 @@
 /// <reference path="../fx-components.d.ts" />
-import {Fx} from '../utils/fx';
+import {Effects} from '../utils/effects';
 import { FxObserver } from '../fx-effects/fx-effects';
 import styles from './fx-card.css';
 
 export { };
 
-class FxCard extends Fx._compose(HTMLElement,FxObserver) {
+class FxCard extends Effects._compose(HTMLElement,FxObserver) {
     static styles = `
         ${styles}
     `;

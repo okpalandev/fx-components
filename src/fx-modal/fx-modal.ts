@@ -1,4 +1,4 @@
-import { Fx } from '../utils/fx';
+import { Effects } from '../utils/effects';
 import styles from './fx-modal.css';
 export { };
 
@@ -54,6 +54,6 @@ export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base
     }
 }
 
-const FxModalElement = Fx._compose(HTMLElement,FxModalMixin) as any;
+const FxModalElement = Effects._compose(HTMLElement,FxModalMixin) as any;
 customElements.define('fx-modal', FxModalElement);
 export { FxModalElement as default};

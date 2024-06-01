@@ -1,9 +1,9 @@
 export {};
-export default Fx;
+export default Effects;
 /**
- * Namespace containing utility functions for Fx components.
+ * Namespace containing utility functions for Effects components.
  */
-export namespace Fx {
+export namespace Effects {
     /**
      * Composes a class with one or more mixins.
      * @param ctor - The base class to compose with mixins.
@@ -60,13 +60,7 @@ export namespace Fx {
         return template;
     };
 
-    /**
-     * Generates a unique identifier.
-     * @returns The generated unique identifier.
-     */
-    export function _uniqId() {
-        return Math.random().toString(36).substr(2, 9);
-    };
+    
 
     
 }

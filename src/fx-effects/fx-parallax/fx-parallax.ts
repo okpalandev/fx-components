@@ -1,4 +1,4 @@
-import { Fx } from '../../utils/fx';
+import { Effects } from '../../utils/effects';
 export { };
 
 declare global {
@@ -79,6 +79,6 @@ export function FxParallaxMixin<T extends new (...args: any[]) => {}>(Base: T) {
 
 }
 
-export const FxParallaxElement = Fx._compose(HTMLElement, FxParallaxMixin);
+export const FxParallaxElement = Effects._compose(HTMLElement, FxParallaxMixin);
 customElements.define('fx-parallax', FxParallaxElement);
 

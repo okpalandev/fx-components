@@ -1,5 +1,5 @@
 import styles from '../../styles/neumorphix.scss' assert { type: 'scss' };
-import Fx from '../../utils/fx';
+import Effects from '../../utils/effects';
 
 declare global {
     interface HTMLElementTagNameMap {
@@ -57,7 +57,7 @@ export const FxNeuromorphicMixin = (Base:FxNeu) => class FxNeu extends HTMLEleme
     }
 }
 
-export const FxNeuElement = Fx._compose( HTMLElement as any,FxNeuromorphicMixin) as any
+export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin) as any
 export { FxNeuElement as FxNeu };
 
 
