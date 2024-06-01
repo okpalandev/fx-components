@@ -4,7 +4,7 @@
   "description": "Special Effects Components",
   "main": "dist/fx-components.js",
   "module": "dist/fx-components.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/fx-components.d.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
