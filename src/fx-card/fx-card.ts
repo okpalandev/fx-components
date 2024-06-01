@@ -6,7 +6,7 @@ import styles from './fx-card.css';
 
 export { };
 
-class FxCard extends Effects._compose(HTMLElement,FxObserver) {
+class FxCard extends HTMLElement {
     static styles = `
         ${styles}
     `;
@@ -58,7 +58,6 @@ class FxCard extends Effects._compose(HTMLElement,FxObserver) {
         }
     }
 
-   
     setInitialContent() {
         if (!(this as unknown as HTMLElement).hasAttribute('role')) {
             (this as unknown as HTMLElement).setAttribute('role', 'card');
@@ -81,5 +80,6 @@ class FxCard extends Effects._compose(HTMLElement,FxObserver) {
     }
 }
 
+export const FxCardElement = FxCard as unknown as HTMLElement;
 customElements.define('fx-card', FxCard as unknown as CustomElementConstructor);
 export { FxCard };

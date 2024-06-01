@@ -1,6 +1,7 @@
 /// <reference types="jest" />
 import { html, fixture, expect } from '@open-wc/testing';
 import './fx-card';
+import { FxCardElement } from './fx-card'; // Import the specific type of the custom element
 
 describe('FxCard', () => {
     let element: HTMLElement;
@@ -21,6 +22,8 @@ describe('FxCard', () => {
         expect(title.textContent).to.equal('Test Title');
         expect(description.textContent).to.equal('Test Description');
     });
+    it('should reflect attribute changes in the shadow DOM', async () => {
+        const element: FxCardElement = await fixture(html`<fx-card fx-title="Test Title" fx-description="Test Description"></fx-card>`); // Change the type of the element variable
 
     it('should reflect attribute changes in the shadow DOM', async () => {
         element.setAttribute('fx-title', 'New Title');
