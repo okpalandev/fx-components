@@ -2,7 +2,10 @@
 export * from './utils/index';
 
 // effects
-export * from './fx-effects/fx-effects';
+export * from './fx-parallax/fx-parallax';
+export * from './fx-neu/fx-neu';
+export * from './fx-observer/fx-observer';
+
 
 // components
 export * from './fx-card/fx-card';
