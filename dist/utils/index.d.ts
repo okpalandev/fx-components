@@ -1,1 +1,1 @@
-export * from './fx';
+export { Effects } from './effects';
