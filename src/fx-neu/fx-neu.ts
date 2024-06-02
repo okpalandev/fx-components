@@ -58,7 +58,7 @@ export const FxNeuromorphicMixin = (Base: FxNeu) => class FxNeu extends HTMLElem
     }
 }
 
-export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin) as any;
+export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin(HTMLElement as any )) as any;
 customElements.define('fx-neu', FxNeuElement);
 export { FxNeuElement as FxNeu };
 
