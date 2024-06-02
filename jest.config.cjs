@@ -6,5 +6,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
   testMatch: ['**/*.spec.ts'],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.mjs'],
 };
