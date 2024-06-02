@@ -1,4 +1,4 @@
-import { Effects } from '../utils/effects';
+import { Effects } from '../utils/';
 import styles from './fx-modal.css';
 export { };
 

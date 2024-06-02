@@ -1,5 +1,5 @@
 import styles from '../styles/neumorphix.scss' assert { type: 'scss' };
-import * as Effects from '../utils/effects';
+import { Effects } from '../utils/';
 
 declare global {
     interface HTMLElementTagNameMap {
