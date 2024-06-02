@@ -1,5 +1,5 @@
 // utitlies 
-export * from './utils/index';
+export * as default from './utils/index';
 
 // effects
 export * from './fx-parallax/fx-parallax';
