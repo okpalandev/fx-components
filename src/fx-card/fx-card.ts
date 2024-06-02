@@ -19,7 +19,6 @@ class FxCard extends HTMLElement {
     
     connectedCallback() {
         this.render();
-        this.observeAttributes();
         this.setInitialContent();
     }
 
