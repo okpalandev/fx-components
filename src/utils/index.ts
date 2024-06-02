@@ -1,3 +1,3 @@
 
-export *  as Effect  from './effects';
+export *  as Effects  from './effects';
 
