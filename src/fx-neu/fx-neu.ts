@@ -7,6 +7,7 @@ declare global {
     }
 };
 
+
 export interface FxNeu extends HTMLElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
