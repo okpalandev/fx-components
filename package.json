@@ -7,7 +7,7 @@
   "types": "dist/fx-components.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs ",
     "purge": "rimraf dist node_modules",
     "dev": "rollup -c -w",
     "prepublishOnly": "npm run build",
