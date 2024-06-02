@@ -1,4 +1,4 @@
-import styles from '../../styles/neumorphix.scss' assert { type: 'scss' };
+import styles from '../styles/neumorphix.scss' assert { type: 'scss' };
 import Effects from '../utils/effects';
 
 declare global {
