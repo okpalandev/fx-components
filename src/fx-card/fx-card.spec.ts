@@ -5,7 +5,7 @@ import { FxCardElement } from './fx-card';
 
 describe('FxCard', () => {
     let element: HTMLElement;
-
+    
     beforeEach(async () => {
         element = await fixture(html`<fx-card fx-title="Test Title" fx-description="Test Description"></fx-card>`);
     });
