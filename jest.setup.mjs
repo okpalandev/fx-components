@@ -1,1 +1,1 @@
-require('@open-wc/testing-helpers');
+import '@open-wc/testing-helpers';
