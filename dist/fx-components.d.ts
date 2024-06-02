@@ -1,4 +1,4 @@
-export * as default from './utils/index';
+export * from './utils/index';
 export * from './fx-parallax/fx-parallax';
 export * from './fx-neu/fx-neu';
 export * from './fx-observer/fx-observer';

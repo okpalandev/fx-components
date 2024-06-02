@@ -10,14 +10,13 @@ export default {
         {
             file: 'dist/fx-components.js',
             format: 'es',
-            sourcemap: true
+            sourcemap: true,
+            exports: 'named',
         },
         {
             file: 'dist/fx-components.umd.js',
             format: 'umd',
-            output:{
-                exports: 'named',
-            },
+            exports: 'named',
             name: 'FxComponents',
             sourcemap: true
         }
