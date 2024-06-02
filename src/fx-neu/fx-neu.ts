@@ -13,7 +13,7 @@ export interface FxNeu extends HTMLElement {
     attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
 }
 
-export const FxNeuromorphicMixin = (Base:FxNeu) => class FxNeu extends HTMLElement implements FxNeu {
+export const FxNeuromorphicMixin = (Base: FxNeu) => class FxNeu extends HTMLElement implements FxNeu {
     static get observedAttributes() {
         return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
     }
@@ -57,7 +57,8 @@ export const FxNeuromorphicMixin = (Base:FxNeu) => class FxNeu extends HTMLEleme
     }
 }
 
-export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin) as any
+export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin) as any;
+customElements.define('fx-neu', FxNeuElement);
 export { FxNeuElement as FxNeu };
 
 
