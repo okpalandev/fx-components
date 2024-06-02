@@ -4,6 +4,7 @@
   "description": "Special Effects Components",
   "main": "dist/fx-components.js",
   "module": "dist/fx-components.js",
+  "type": "module",
   "types": "dist/fx-components.d.ts",
   "scripts": {
     "test": "jest",
