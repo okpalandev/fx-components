@@ -5,9 +5,8 @@
   "main": "dist/fx-components.js",
   "module": "dist/fx-components.js",
   "types": "dist/fx-components.d.ts",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "rollup -c",
     "purge": "rimraf dist node_modules",
     "dev": "rollup -c -w",
