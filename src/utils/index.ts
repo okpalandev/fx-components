@@ -1,1 +1,3 @@
-export *  from './effects';
+import { Effects } from './effects';
+export { Effects };
+

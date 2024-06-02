@@ -14,7 +14,6 @@ export default {
         },
         {
             file: 'dist/fx-components.umd.js',
-            includePaths: ['./src/utils' ],
             format: 'umd',
             name: 'FxComponents',
             sourcemap: true
