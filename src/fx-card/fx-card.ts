@@ -1,5 +1,5 @@
 /// <reference path="../fx-components.d.ts" />
-import {Effects} from '../utils/effects';
+import *  as Effects from '../utils/effects';
 
 import styles from './fx-card.css';
 
