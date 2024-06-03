@@ -76,7 +76,6 @@ export class extends HTMLElement {
 
     }
 
-}
 
 customElements.define('fx-parallax', FxParallax);
 export { FxParallax as default };
