@@ -21,6 +21,7 @@ export declare class FxModal extends HTMLElement {
 }
 
 export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T) {
+    
     return class extends Base {
         shadow: any;
         closeButton: any;
@@ -54,6 +55,6 @@ export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base
     }
 }
 
-const FxModalElement = Effects._compose(HTMLElement,FxModalMixin()) as any;
+const FxModalElement = Effects._compose(HTMLElement,FxModalMixin(HTMLElement)) as any;
 customElements.define('fx-modal', FxModalElement);
 export { FxModalElement as default};

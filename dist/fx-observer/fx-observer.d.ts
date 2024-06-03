@@ -6,7 +6,7 @@ declare interface FxObserver {
 }
 declare class FxObserver extends HTMLElement {
     observers: Map<Node, MutationObserver>;
-    constructor();
+    constructor(...args: any[]);
     connectedCallback(): void;
     getRecords(): MutationRecord[];
     attributeChangedCallback(name: string, oldValue: any, newValue: any): void;

@@ -9,7 +9,7 @@ export interface FxNeu extends HTMLElement {
     attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
 }
 export declare const FxNeuromorphicMixin: (Base: FxNeu) => {
-    new (): {
+    new (...args: any[]): {
         connectedCallback(): void;
         disconnectedCallback(): void;
         handleMouseEnter(): void;

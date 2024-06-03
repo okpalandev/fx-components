@@ -4,10 +4,7 @@
  * @param mixins - The mixins to apply to the base class.
  * @returns The composed class.
  */
-declare function _compose(ctor?: {
-    new (): HTMLElement;
-    prototype: HTMLElement;
-}, ...mixins: any[]): any;
+declare function _compose(ctor?: any, ...mixins: any[]): any;
 /**
  * Interpolates a template string with CSS styles.
  * @param strings - The template strings.
