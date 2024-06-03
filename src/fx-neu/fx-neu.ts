@@ -1,9 +1,8 @@
 import styles from '../styles/neumorphix.scss' assert { type: 'scss' };
-import { Effects } from '../utils/';
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-neu': typeof FxNeuElement;
+        'fx-neu': FxNeu;
     }
 };
 
@@ -12,10 +11,9 @@ export interface FxNeu extends HTMLElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
     attributeChangedCallback(name: string, oldValue: string, newValue: string): void;
-}
+};
 
-export const FxNeuMixin = (Base: FxNeu) =>
-     class FxNeu extends HTMLElement implements FxNeu {
+export class FxNeu extends HTMLElement implements FxNeu {
     static get observedAttributes() {
         return ['fx-neu-radius', 'fx-neu-shadow-light', 'fx-neu-shadow-dark', 'fx-neu-shadow-x', 'fx-neu-shadow-y', 'fx-neu-blur'];
     }
@@ -59,8 +57,5 @@ export const FxNeuMixin = (Base: FxNeu) =>
     }
 }
 
-export const FxNeuElement: FxNeu = FxNeuMixin(HTMLElement);
-customElements.define('fx-neu', FxNeuElement);
-export { FxNeuElement as FxNeu };
-
-
+customElements.define('fx-neu', FxNeu);
+export { FxNeu as default };

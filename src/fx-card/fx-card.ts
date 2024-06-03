@@ -5,10 +5,13 @@ import styles from './fx-card.css';
 
 export { };
 
+declare global {
+    interface HTMLElementTagNameMap {
+        'fx-card': FxCard;
+    }
+}
 
-
-function FxCardMixin<T extends new (...args: any[]) => HTMLElement>(Base: T) {
-    return class FxCard extends HTMLElement {
+ export class FxCard extends HTMLElement {
         static styles = `
             ${styles}
         `;
@@ -80,7 +83,6 @@ function FxCardMixin<T extends new (...args: any[]) => HTMLElement>(Base: T) {
             }
         }
     }
-    }
-
-customElements.define('fx-card', FxCardMixin(HTMLElement) as any);
-export { FxCardMixin as default };
+    
+customElements.define('fx-card', FxCard);
+export { FxCard as default };
