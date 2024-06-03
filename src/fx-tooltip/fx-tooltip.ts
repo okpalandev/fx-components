@@ -8,16 +8,10 @@ declare global {
     }
 }
 
-export declare interface FxTooltip {
-    constructor(): void;
-    prototype: {
-        handleMouseEnter: () => void;
-        handleMouseLeave: () => void;
-    } | undefined;
-};
 
 
-return class FxTooltip extends HTMLElement {
+
+ class FxTooltip extends HTMLElement {
         tooltip!: HTMLDivElement;
         constructor(...args: any[]) {
             super(...args as []);
@@ -56,9 +50,5 @@ return class FxTooltip extends HTMLElement {
         }
     }
     
-}
-
- const FxTooltipElement =  Effects._compose(HTMLElement, FxTooltipMixin(HTMLElement) as any) as any;
-
-customElements.define('fx-tooltip', FxTooltipElement);
-export { FxTooltipElement };
+customElements.define('fx-tooltip', FxTooltip);
+ export { FxTooltip as default};
