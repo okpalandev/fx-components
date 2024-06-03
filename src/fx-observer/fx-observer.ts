@@ -8,8 +8,8 @@ declare interface FxObserver {
 
 class FxObserver extends HTMLElement  {
     observers: Map<Node, MutationObserver> = new Map();
-    constructor() {
-        super();
+    constructor(...args: any[]) {
+        super(...args as []);
         this.observeAttributes = this.observeAttributes.bind(this);
 
     }

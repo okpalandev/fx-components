@@ -25,8 +25,8 @@ export const FxNeuromorphicMixin = (Base: FxNeu) => class FxNeu extends HTMLElem
         `;
     };
 
-    constructor() {
-        super();
+    constructor(...args: any[]) {
+        super(...args as []);
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
@@ -58,7 +58,7 @@ export const FxNeuromorphicMixin = (Base: FxNeu) => class FxNeu extends HTMLElem
     }
 }
 
-export const FxNeuElement = Effects._compose( HTMLElement as any,FxNeuromorphicMixin(HTMLElement as any )) as any;
+export const FxNeuElement = Effects._compose(HTMLElement as any, FxNeuromorphicMixin(HTMLElement as any )) as any;
 customElements.define('fx-neu', FxNeuElement);
 export { FxNeuElement as FxNeu };
 

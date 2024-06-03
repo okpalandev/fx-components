@@ -26,7 +26,7 @@ export declare class FxTooltip extends HTMLElement {
 }
 
 export function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T) {
-    return class extends HTMLElement {
+ return class extends HTMLElement {
         tooltip!: HTMLDivElement;
         constructor(...args: any[]) {
             super(...args as []);
