@@ -15,13 +15,7 @@ export interface FxParallax {
     } | undefined;
 }
 
-export declare class FxParallax extends HTMLElement implements FxParallax {
-    constructor();
-    handleScroll(): void;
-    isScrolling: boolean;
-}
-
-export class extends HTMLElement {
+export class FxParallax extends HTMLElement {
         isScrolling: boolean;
         constructor(...args: any[]) {
             super(...args as []);

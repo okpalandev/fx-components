@@ -4,7 +4,7 @@ export { };
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fx-tooltip': typeof FxTooltip;
+        'fx-tooltip':  FxTooltip;
     }
 }
 
@@ -16,17 +16,8 @@ export declare interface FxTooltip {
     } | undefined;
 };
 
-export declare class FxTooltip extends HTMLElement {
-    constructor();
-    handleScroll(): void;
-    handleMouseEnter(): void;
-    handleMouseLeave(): void;
-    tooltip: HTMLDivElement;
-    observedAttributes: string[];
-}
 
-export function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T) {
- return class extends HTMLElement {
+return class FxTooltip extends HTMLElement {
         tooltip!: HTMLDivElement;
         constructor(...args: any[]) {
             super(...args as []);
