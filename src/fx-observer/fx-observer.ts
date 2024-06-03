@@ -40,8 +40,6 @@ class FxObserver extends HTMLElement  {
         return Array.from(this.observers.values()).flatMap((observer: MutationObserver) => observer.takeRecords());
     }
 
-    
-
     observeAttributes() {
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
@@ -58,6 +56,12 @@ class FxObserver extends HTMLElement  {
     attributeChangedCallback(name: string, oldValue: any, newValue: any) {
         console.log('attributeChangedCallback', name, oldValue, newValue);
     }
+
+    disconnectedCallback() {
+        this.disconnect();
+    }
+
+    
 
 }
 

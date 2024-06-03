@@ -64,6 +64,7 @@ export function FxTooltipMixin<T extends new (...args: any[]) => {}>(Base: T) {
             return ['fx-data-tooltip'];
         }
     }
+    
 }
 
  const FxTooltipElement =  Effects._compose(HTMLElement, FxTooltipMixin(HTMLElement) as any) as any;

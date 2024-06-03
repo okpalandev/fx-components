@@ -21,7 +21,6 @@ export declare class FxModal extends HTMLElement {
 }
 
 export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base: T) {
-    
     return class extends Base {
         shadow: any;
         closeButton: any;
