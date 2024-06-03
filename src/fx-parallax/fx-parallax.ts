@@ -79,6 +79,6 @@ export function FxParallaxMixin<T extends new (...args: any[]) => {}>(Base: T) {
 
 }
 
-export const FxParallaxElement = Effects._compose(HTMLElement, FxParallaxMixin(HTMLElement)) as any;
+export const FxParallaxElement = FxParallaxMixin(HTMLElement);
 customElements.define('fx-parallax', FxParallaxElement);
 

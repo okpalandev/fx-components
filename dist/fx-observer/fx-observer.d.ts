@@ -10,5 +10,6 @@ declare class FxObserver extends HTMLElement {
     connectedCallback(): void;
     getRecords(): MutationRecord[];
     attributeChangedCallback(name: string, oldValue: any, newValue: any): void;
+    disconnectedCallback(): void;
 }
 export { FxObserver };

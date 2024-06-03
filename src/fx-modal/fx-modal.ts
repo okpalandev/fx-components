@@ -54,6 +54,6 @@ export function FxModalMixin<T extends new (...args: any[]) => HTMLElement>(Base
     }
 }
 
-const FxModalElement = Effects._compose(HTMLElement,FxModalMixin(HTMLElement)) as any;
+const FxModalElement =  FxModalMixin(FxModal);
 customElements.define('fx-modal', FxModalElement);
 export { FxModalElement as default};
