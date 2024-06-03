@@ -21,8 +21,7 @@ export declare class FxParallax extends HTMLElement implements FxParallax {
     isScrolling: boolean;
 }
 
-export function FxParallaxMixin<T extends new (...args: any[]) => {}>(Base: T) {
-    return class extends HTMLElement {
+export class extends HTMLElement {
         isScrolling: boolean;
         constructor(...args: any[]) {
             super(...args as []);
@@ -79,6 +78,6 @@ export function FxParallaxMixin<T extends new (...args: any[]) => {}>(Base: T) {
 
 }
 
-export const FxParallaxElement = FxParallaxMixin(HTMLElement);
-customElements.define('fx-parallax', FxParallaxElement);
+customElements.define('fx-parallax', FxParallax);
+export { FxParallax as default };
 
