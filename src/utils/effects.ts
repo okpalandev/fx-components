@@ -5,10 +5,9 @@
  * @param mixins - The mixins to apply to the base class.
  * @returns The composed class.
  */
- function _compose(ctor = HTMLElement, ...mixins: any[]) {
+function _compose(ctor: any = HTMLElement, ...mixins: any[]) {
     return mixins.reduce((BaseClass, mixin) => mixin(BaseClass), ctor);
-};
-
+}
 /**
  * Interpolates a template string with CSS styles.
  * @param strings - The template strings.
